@@ -12,7 +12,14 @@
 					"listen": "prerequest",
 					"script": {
 						"exec": [
-							""
+							"// Convertendo valores para base64\r",
+							"var login = pm.collectionVariables.get(\"login\");\r",
+							"var loginBase64 = btoa(login);\r",
+							"pm.collectionVariables.set(\"loginBase64\", loginBase64);\r",
+							"\r",
+							"var senha = pm.collectionVariables.get(\"senha\");\r",
+							"var senhaBase64 = btoa(senha);\r",
+							"pm.collectionVariables.set(\"senhaBase64\", senhaBase64);"
 						],
 						"type": "text/javascript"
 					}
@@ -101,11 +108,19 @@
 		},
 		{
 			"key": "loginBase64",
-			"value": "VGVzdGU="
+			"value": ""
 		},
 		{
 			"key": "senhaBase64",
-			"value": "MTIzNDU2"
+			"value": ""
+		},
+		{
+			"key": "login",
+			"value": ""
+		},
+		{
+			"key": "senha",
+			"value": ""
 		}
 	]
 }
