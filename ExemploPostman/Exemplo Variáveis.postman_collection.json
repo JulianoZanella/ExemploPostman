@@ -23,9 +23,22 @@
 						],
 						"type": "text/javascript"
 					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var resposta = pm.response.json();\r",
+							"pm.collectionVariables.set(\"token\", resposta.token);"
+						],
+						"type": "text/javascript"
+					}
 				}
 			],
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -54,16 +67,6 @@
 		{
 			"name": "Perfil",
 			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IlRlc3RlIiwibmJmIjoxNjI4MzY5NzgyLCJleHAiOjE2MjgzNzY5ODAsImlhdCI6MTYyODM2OTc4Mn0.JvBUccv9AylnCd4oIb0myAumVK1liS5JhSmN8yPp-m4",
-							"type": "string"
-						}
-					]
-				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -81,6 +84,16 @@
 			"response": []
 		}
 	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
 	"event": [
 		{
 			"listen": "prerequest",
@@ -116,10 +129,14 @@
 		},
 		{
 			"key": "login",
-			"value": ""
+			"value": "Teste"
 		},
 		{
 			"key": "senha",
+			"value": "123456"
+		},
+		{
+			"key": "token",
 			"value": ""
 		}
 	]
