@@ -30,7 +30,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"login\":\"{{loginBase64}}\",\r\n    \"senha\":\"{{senhaBase64}}\"\r\n}",
+					"raw": "{\r\n    \"login\": \"{{loginBase64}}\",\r\n    \"senha\": \"{{senhaBase64}}\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
