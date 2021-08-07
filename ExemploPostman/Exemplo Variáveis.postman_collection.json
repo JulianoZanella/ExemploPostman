@@ -7,12 +7,23 @@
 	"item": [
 		{
 			"name": "Logar",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"login\":\"VGVzdGU=\",\r\n    \"senha\":\"MTIzNDU2\"\r\n}",
+					"raw": "{\r\n    \"login\":\"{{loginBase64}}\",\r\n    \"senha\":\"{{senhaBase64}}\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -20,12 +31,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://localhost:44350/v1/conta/login",
-					"protocol": "https",
+					"raw": "{{urlBase}}/v1/conta/login",
 					"host": [
-						"localhost"
+						"{{urlBase}}"
 					],
-					"port": "44350",
 					"path": [
 						"v1",
 						"conta",
@@ -51,12 +60,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:44350/v1/conta/login",
-					"protocol": "https",
+					"raw": "{{urlBase}}/v1/conta/login",
 					"host": [
-						"localhost"
+						"{{urlBase}}"
 					],
-					"port": "44350",
 					"path": [
 						"v1",
 						"conta",
@@ -65,6 +72,40 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "urlBase",
+			"value": "https://localhost:44350"
+		},
+		{
+			"key": "loginBase64",
+			"value": "VGVzdGU="
+		},
+		{
+			"key": "senhaBase64",
+			"value": "MTIzNDU2"
 		}
 	]
 }
