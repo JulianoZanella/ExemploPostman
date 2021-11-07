@@ -13,7 +13,7 @@ namespace ExemploPostman.Controllers
         [HttpPost]
         [Route("login")]
         [AllowAnonymous]
-        public ActionResult Autenticar([FromBody] UsuarioDTO usuarioDTO)
+        public ActionResult Autenticar([FromForm] UsuarioDTO usuarioDTO)
         {
             var usuario = UsuarioRepositorio.Get(usuarioDTO.LoginConvertido, usuarioDTO.SenhaConvertida);
 

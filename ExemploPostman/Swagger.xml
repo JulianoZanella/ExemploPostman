@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ExemploPostman</name>
+    </assembly>
+    <members>
+        <member name="P:ExemploPostman.DTO.UsuarioDTO.Login">
+            <summary>
+            Gets or sets the login.
+            </summary>
+            <value>
+            The login.
+            </value>
+        </member>
+    </members>
+</doc>

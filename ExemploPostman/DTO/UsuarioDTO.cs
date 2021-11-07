@@ -6,6 +6,12 @@ namespace ExemploPostman.DTO
 {
     public class UsuarioDTO
     {
+        /// <summary>
+        /// Gets or sets the login.
+        /// </summary>
+        /// <value>
+        /// The login.
+        /// </value>
         [Required]
         public string Login { get; set; }
 
