@@ -3,6 +3,7 @@ using ExemploPostman.Repositorios;
 using ExemploPostman.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Configuration;
 
 namespace ExemploPostman.Controllers
 {
@@ -32,5 +33,12 @@ namespace ExemploPostman.Controllers
         [Route("login")]
         [Authorize]
         public string ObterLogin() => User.Identity.Name;
+
+        [HttpGet]
+        [Route("setting")]
+        public string TesteSetting()
+        {
+            return ConfigurationManager.AppSettings["TesteChave"];
+        }
     }
 }
